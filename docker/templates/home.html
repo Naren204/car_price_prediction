@@ -1,0 +1,222 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">CAR PRICE</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Year</h5>
+                            <!-- Year -->
+                            <input type="number" name="Year" id="Year" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kilometers</h5>
+                            <!-- Kilometers -->
+                            <input type="number" name="Kilometers" id="Kilometers" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Fuel_type -->
+                            <h5 class="card-title">Fuel_Type</h5>
+                            <select name="Fuel_Type" id="Fuel_Type" required="required">
+                                <option value="Petrol">Petrol</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Petrol + CNG">Petrol + CNG</option>
+                                <option value="Petrol + LPG">Petrol + LPG</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Transmission_Type -->
+                            <h5 class="card-title">Transmission_Type</h5>
+                            <select name="Transmission_Type" id="Transmission_Type" required="required">
+                                <option value="MANUAL">MANUAL</option>
+                                <option value="AUTOMATIC">AUTOMATIC</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">RTO</h5>
+                            <!-- RTO -->
+                            <select name="RTO" id="RTO" required="required">
+                                <option value="Delhi">Delhi</option>
+                                <option value="Other State">Other State</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Insurance Type</h5>
+                            <!-- Airline -->
+                            <select name="Insurance_Type" id="Insurance_Type" required="required">
+                                <option value="Comp">Comp</option>
+                                <option value="Zero_Dep">Zero_Dep</option>
+                                <option value="Third_party">Third_party</option>
+                                <option value="Expired">Expired</option>
+                                <option value="Insurance Expired">Insurance Expired</option>
+                                <option value="Comprehensive">Comprehensive</option>
+                                <option value="Zero Depreciation">Zero Depreciation</option>
+                                <option value="3rd Party">3rd Party</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Owner Type</h5>
+                            <!-- owner -->
+                            <select name="Owner" id="owner" required="required">
+                                <option value="First Owner">First Owner</option>
+                                <option value="Second Owner">Second Owner</option>
+                                <option value="Third Owner">Third Owner</option>
+                                <option value="Fourth Owner">Fourth Owner</option>
+                                <option value="Fifth Owner">Fifth Owner</option>
+                                <option value="Sixth Owner">Sixth Owner</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Brand of Car</h5>
+                            <select name="Brand_Name" id="Brand_Name" required="required">
+                                <option value="Tata">Tata</option>
+                                <option value="Maruti">Maruti</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Datsun">Datsun</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Renault">Renault</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Mahindra">Mahindra</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Mercedes">Mercedes</option>
+                                <option value="Skoda">Skoda</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Fiat">Fiat</option>
+                                <option value="KIA">KIA</option>
+                                <option value="Ssangyong">Ssangyong</option>
+                                <option value="MG">MG</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Volvo">Volvo</option>
+                                <option value="Jeep">Jeep</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+    <!-- JavaScript
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>
